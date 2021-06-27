@@ -35,6 +35,9 @@ gem "shrine", "~> 3.0"
 gem 'cloudinary'
 gem "shrine-cloudinary", "~> 1.1"
 
+# devise for authentication
+gem 'devise'
+
 
 
 # Reduces boot times through caching; required in config/boot.rb

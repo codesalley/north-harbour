@@ -1,46 +1,60 @@
-<h2>Sign up</h2>
+<div>
 
-<%= form_for(resource, as: resource_name, url: registration_path(resource_name)) do |f| %>
-  <%= render "devise/shared/error_messages" , resource: resource %>
 
-    <div class="field">
-      <%= f.label :first_name %><br />
-        <%= f.email_field :first_name, autofocus: true, autocomplete: "first name" %>
-    </div>
-    <div class="field">
-      <%= f.label :last_name %><br />
-        <%= f.email_field :last_name, autofocus: true, autocomplete: "last name" %>
-    </div>
-    <div class="field">
-      <%= f.label :location %><br />
-        <%= f.email_field :location, autofocus: true, autocomplete: "location" %>
-    </div>
-    <div class="field">
-      <%= f.label :phone_number %><br />
-        <%= f.email_field :phone_number, autofocus: true, autocomplete: "phone number" %>
-    </div>
+  <div class="sign-up-form">
 
-    <div class="field">
-      <%= f.label :email %><br />
-        <%= f.email_field :email, autofocus: true, autocomplete: "email" %>
-    </div>
 
-    <div class="field">
-      <%= f.label :password %>
-        <% if @minimum_password_length %>
-          <em>(<%= @minimum_password_length %> characters minimum)</em>
-          <% end %><br />
-            <%= f.password_field :password, autocomplete: "new-password" %>
-    </div>
+    <h2>Sign up</h2>
 
-    <div class="field">
-      <%= f.label :password_confirmation %><br />
-        <%= f.password_field :password_confirmation, autocomplete: "new-password" %>
-    </div>
+    <%= form_for(resource, as: resource_name, url: registration_path(resource_name)) do |f| %>
+      <%= render "devise/shared/error_messages" , resource: resource %>
 
-    <div class="actions">
-      <%= f.submit "Sign up" %>
-    </div>
-    <% end %>
+        <div class="form-floating mb-3">
+          <%= f.text_field :first_name, autofocus: true, autocomplete: "first name" , class:"form-control" , :id=>
+            'floatingInput', placeholder: 'First Name'%>
+            <%= f.label :floatingInput, "First Name" %>
+        </div>
+        <div class="form-floating mb-3">
+          <%= f.text_field :last_name, autofocus: true, autocomplete: "last name" , class:"form-control" , :id=>
+            'floatingInput', placeholder: 'last Name' %>
+            <%= f.label :floatingInput, "Last Name" %>
+        </div>
+        <div class="form-floating mb-3">
+          <%= f.text_field :location, autofocus: true, autocomplete: "location" , class:"form-control" , :id=>
+            'floatingInput', placeholder: 'Location' %>
+            <%= f.label :floatingInput, "Location" %>
+        </div>
+        <div class="form-floating mb-3">
+          <%= f.telephone_field :phone_number, autofocus: true, autocomplete: "phone number" , class:"form-control" ,
+            :id=>
+            'floatingInput', placeholder: 'Phone Number' %>
+            <%= f.label :floatingInput, "Phone Number" %>
+        </div>
 
-      <%= render "devise/shared/links" %>
+        <div class="form-floating mb-3">
+          <%= f.email_field :email, autofocus: true, autocomplete: "email" , class:"form-control" , :id=>
+            'floatingInput', placeholder: 'Email' %>
+            <%= f.label :floatingInput, "Email" %>
+        </div>
+
+        <div class="form-floating mb-3">
+          <%= f.password_field :password, autocomplete: "new-password" , class:"form-control" , :id=>
+            'floatingInput', placeholder: 'Password' %>
+            <%= f.label :floatingInput, "Password" %>
+
+        </div>
+
+        <div class="form-floating mb-3">
+          <%= f.password_field :password_confirmation, autocomplete: "new-password" , class:"form-control" , :id=>
+            'floatingInput', placeholder: 'Password Confirmation' %>
+            <%= f.label :floatingInput, "password Confirmation" %>
+        </div>
+
+        <div class="actions">
+          <%= f.submit "Sign up" %>
+        </div>
+        <% end %>
+
+          <%= render "devise/shared/links" %>
+  </div>
+</div>

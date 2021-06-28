@@ -71,3 +71,33 @@
      z-index: -1;
      opacity: 0.05;
  }
+
+
+ /* nav styles  */
+
+ .nav-mobile {
+     background-color: var(--main-color);
+     /* max-height: 60px; */
+     display: flex;
+     width: 100%;
+     max-width: 500px;
+     justify-content: center;
+     margin: auto;
+  
+     gap: 2%;
+     padding: 5px;
+ }
+
+ .nav-link {
+     display: inline-block;
+     height: 100%;
+     text-decoration: none;
+}
+    
+.nav-link p  {
+    
+  }
+
+ .nav-img {
+    max-height: 30px;
+ }

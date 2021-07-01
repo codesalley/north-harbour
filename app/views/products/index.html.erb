@@ -7,7 +7,13 @@
     <p>Welcome new User </p>
     <p>Search bar</p>
     <div class="advert">
-        <%= cl_image_tag( @products.last.photos, width: 300, height: 200, crop: :scale) %>
+        <%= cl_image_tag(@products.last.photos_three.url, width: 300, height: 300, crop: :scale, effect: "cartoonify" )
+            %>
+
+            <%= link_to 'delete' , Cloudinary::Uploader.destroy(@products.last.photos_three.key, options={}) %>
+
+
+
     </div>
 
 </div>

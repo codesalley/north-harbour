@@ -14,15 +14,22 @@ class ProductsController < ApplicationController
         @condition = CONDITION
         # photo_arr =   [params[:product][:photos_1], params[:product][:photos_2], params[:product][:photos_3]].compact
 
-        product = Product.new(name: params[:product][:name], condition: @condition [params[:product][:condition].to_i ][0], location: params[:product][:location], description: params[:product][:description], photos: params[:photos], price: params[:product][:price].to_s, category:  @categories[params[:product][:category].to_i][0], user_id: current_user.id)
-        p product 
+        product = current_user.products.build(product_params)
+        p params[:photos] 
+        p params
         
         if product.save
+            # product.photos = Cloudinary::Uploader.upload(photos: params[:photos])
             if current_user.admin?
                 product.update(active: true)
                 redirect_to root_path, notice: 'product is live'
             end
             redirect_to root_path, notice: 'product summited for review'
         end
+    end
+
+    private 
+    def product_params 
+        params.require(:product).permit(:name, :location, :price, :description, :photos_one, :photos_two, :photos_three)
     end
 end

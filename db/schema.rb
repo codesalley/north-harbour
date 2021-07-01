@@ -10,10 +10,26 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2021_06_27_135908) do
+ActiveRecord::Schema.define(version: 2021_07_01_124026) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
+
+  create_table "attachinary_files", force: :cascade do |t|
+    t.string "attachinariable_type"
+    t.bigint "attachinariable_id"
+    t.string "scope"
+    t.string "public_id"
+    t.string "version"
+    t.integer "width"
+    t.integer "height"
+    t.string "format"
+    t.string "resource_type"
+    t.datetime "created_at", precision: 6, null: false
+    t.datetime "updated_at", precision: 6, null: false
+    t.index ["attachinariable_type", "attachinariable_id", "scope"], name: "by_scoped_parent"
+    t.index ["attachinariable_type", "attachinariable_id"], name: "index_attachinary_files_on_attachinariable"
+  end
 
   create_table "products", force: :cascade do |t|
     t.string "name"
@@ -25,6 +41,10 @@ ActiveRecord::Schema.define(version: 2021_06_27_135908) do
     t.datetime "updated_at", precision: 6, null: false
     t.boolean "active", default: false
     t.string "price"
+    t.string "category"
+    t.bigint "user_id"
+    t.string "condition"
+    t.index ["user_id"], name: "index_products_on_user_id"
   end
 
   create_table "users", force: :cascade do |t|
@@ -51,4 +71,5 @@ ActiveRecord::Schema.define(version: 2021_06_27_135908) do
     t.index ["reset_password_token"], name: "index_users_on_reset_password_token", unique: true
   end
 
+  add_foreign_key "products", "users"
 end

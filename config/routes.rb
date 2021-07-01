@@ -4,7 +4,7 @@ Rails.application.routes.draw do
 
 
 
-  resources :profiles
   resources :products
   root 'products#index'
+  mount Attachinary::Engine => "/attachinary"
 end

@@ -3,6 +3,8 @@ class ApplicationController < ActionController::Base
 
     before_action :configure_permitted_parameters, if: :devise_controller?
   
+    @categories = [['Vehicles', 0], ['home Appliances',1], ['Jobs', 2], ['Mobile Phones', 3], ['Electronics', 4], ['Properties', 5], ['Adverts', 6]]
+
     protected
   
       def configure_permitted_parameters

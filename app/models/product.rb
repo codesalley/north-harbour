@@ -7,5 +7,5 @@ class Product < ApplicationRecord
     validates :price, presence: true
     has_attachments :photos, maximum: 3, accept: [:jpg, :png, :gif]
 
-    belongs_to :user, class_name: "user", foreign_key: "user_id"
+    belongs_to :user
 end

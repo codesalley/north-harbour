@@ -2,7 +2,7 @@
 <html>
 
 <head>
-  <title>NorthHarbour</title>
+  <title>North Harbour</title>
   <meta name="viewport" content="width=device-width,initial-scale=1">
   <%= csrf_meta_tags %>
     <%= csp_meta_tag %>
@@ -13,13 +13,17 @@
         crossorigin="anonymous"></script>
       <%= stylesheet_link_tag 'application', media: 'all', 'data-turbolinks-track': 'reload' %>
       <%= javascript_pack_tag 'application', 'data-turbolinks-track': 'reload' %>
-      <%= cloudinary_js_config %>
+    
 </head>
 
 <body>
   <%= render 'shared/navBar' %>
     <%= render partial: 'shared/notice' %>
-      <%= yield %>
+    <%= yield %>
+
+  <script>
+  
+  </script>
 </body>
 
 </html>

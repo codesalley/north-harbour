@@ -5,18 +5,22 @@ class ProductsController < ApplicationController
         
     end
     def new 
-        @categories = [['Vehicles', 0], ['home Appliances',1], ['Jobs', 2], ['Mobile Phones', 3], ['Electronics', 4], ['Properties', 5], ['Adverts', 6]]
+        @categories = CATEGORIES
+        @condition = CONDITION
         @product = Product.new
     end
     def create 
+        @categories = CATEGORIES
+        @condition = CONDITION
+        # photo_arr =   [params[:product][:photos_1], params[:product][:photos_2], params[:product][:photos_3]].compact
+
+        product = Product.new(name: params[:product][:name], condition: @condition [params[:product][:condition].to_i ][0], location: params[:product][:location], description: params[:product][:description], photos: params[:photos], price: params[:product][:price].to_s, category:  @categories[params[:product][:category].to_i][0], user_id: current_user.id)
+        p product 
         
-        photo_arr =   [params[:product][:photos_1], params[:product][:photos_2], params[:product][:photos_3]].compact
-       
-        product = current_user.products.build(name: params[:product][:name], condition: params[:product][:condition], location: params[:product][:location], description: params[:product][:description], photos: photo_arr, price: params[:product][:price], category: params[:product][:category])
-        p params 
-        if product.save! 
+        if product.save
             if current_user.admin?
                 product.update(active: true)
+                redirect_to root_path, notice: 'product is live'
             end
             redirect_to root_path, notice: 'product summited for review'
         end

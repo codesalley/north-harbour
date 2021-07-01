@@ -5,7 +5,8 @@ class Product < ApplicationRecord
     validates :description, presence: true
     validates :location, presence: true
     validates :price, presence: true
-    has_attachments :photos, maximum: 3, accept: [:jpg, :png, :gif]
-
+    
+    has_many_attached :photos
+   
     belongs_to :user
 end

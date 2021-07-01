@@ -27,16 +27,9 @@
     <div class="file-div">
         <div class="form-group mb-3">
             <%= f.label :photos_1, "photos_1" %>
-                <%= f.attachinary_file_field :photos %>
+                <%= f.file_field :photos, direct_upload: true %>
         </div>
-        <div class="form-group mb-3">
-            <%= f.label :photos_2, "photo_2" %>
-                <%= f.attachinary_file_field :photos %>
-        </div>
-        <div class="form-group mb-3">
-            <%= f.label :photos_3, "photo_3" %>
-                <%= f.attachinary_file_field :photos %>
-        </div>
+
 
     </div>
     <div class="form-group mb-3">

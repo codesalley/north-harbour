@@ -4,7 +4,7 @@ class User < ApplicationRecord
   devise :database_authenticatable, :registerable,
          :recoverable, :rememberable, :validatable, :confirmable
 
-    has_attachment  :avatar, accept: [:jpg, :png, :gif]
+    has_one_attached  :avatar
     has_many :products, class_name: "Product"
     has_many :pending,-> { where active: false }, class_name: "Product"
 end

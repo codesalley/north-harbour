@@ -33,6 +33,7 @@ gem 'gravatar_image_tag'
 # gem "shrine", "~> 3.0"
 
 # cloudinary for image storage 
+gem 'carrierwave'
 gem 'cloudinary'
 # gem "shrine-cloudinary", "~> 1.1"
 

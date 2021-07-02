@@ -1,19 +1,10 @@
 <div>
-    <div>
 
-        <p>profile</p>
-        <p>Notification</p>
-    </div>
-    <p>Welcome new User </p>
-    <p>Search bar</p>
-    <div class="advert">
-        <%= cl_image_tag(@products.last.photos_three.url, width: 300, height: 300, crop: :scale, effect: "cartoonify" )
-            %>
+	<div class="products">
+		<% @products.each do |product| %>
+			<%= render 'shared/product_card' , product: product %>
+				<% end %>
+	</div>
 
-            <%= link_to 'delete' , Cloudinary::Uploader.destroy(@products.last.photos_three.key, options={}) %>
-
-
-
-    </div>
 
 </div>

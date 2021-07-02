@@ -250,7 +250,6 @@ PLATFORMS
 DEPENDENCIES
   bootsnap (>= 1.4.4)
   byebug
-  cloudinary
   devise
   dotenv-rails
   gravatar_image_tag

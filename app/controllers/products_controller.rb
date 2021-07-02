@@ -2,7 +2,6 @@ class ProductsController < ApplicationController
     before_action :authenticate_user!
 
     def index
-        p ENV['gmail_email']
       @products = Product.all 
     end
     def new 
@@ -13,14 +12,14 @@ class ProductsController < ApplicationController
     def create 
         @categories = CATEGORIES
         @condition = CONDITION
-        # photo_arr =   [params[:product][:photos_1], params[:product][:photos_2], params[:product][:photos_3]].compact
-
+       
         product = current_user.products.build(product_params)
-        p params[:photos] 
-        p params
         
         if product.save
-            # product.photos = Cloudinary::Uploader.upload(photos: params[:photos])
+            product.update(category:  @categories[params[:product][:category].to_i][0])
+            product.update(condition:  @condition[params[:product][:condition].to_i][0])
+        
+        
             if current_user.admin?
                 product.update(active: true)
                 redirect_to root_path, notice: 'product is live'
@@ -31,6 +30,6 @@ class ProductsController < ApplicationController
 
     private 
     def product_params 
-        params.require(:product).permit(:name, :location, :price, :description, :photos_one, :photos_two, :photos_three)
+        params.require(:product).permit(:name, :location, :price, :description, :photo_one, :photo_two, :photo_three, :photo_four)
     end
 end

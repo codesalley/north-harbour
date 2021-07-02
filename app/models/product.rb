@@ -1,5 +1,9 @@
 class Product < ApplicationRecord
-    include ImageUploader::Attachment(:photos)
+
+    include PhotosUploader::Attachment(:photo_one)
+    include PhotosUploader::Attachment(:photo_two)
+    include PhotosUploader::Attachment(:photo_three)
+    include PhotosUploader::Attachment(:photo_four)
 
     validates :name, presence: true
     validates :description, presence: true

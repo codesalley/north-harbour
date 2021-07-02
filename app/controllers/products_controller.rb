@@ -2,6 +2,7 @@ class ProductsController < ApplicationController
     before_action :authenticate_user!
 
     def index
+        p ENV['gmail_email']
       @products = Product.all 
     end
     def new 

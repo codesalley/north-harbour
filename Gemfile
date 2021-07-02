@@ -30,12 +30,12 @@ gem 'image_processing', '~> 1.2'
 gem 'gravatar_image_tag'
 
 # shirine for image upload 
-# gem "shrine", "~> 3.0"
+gem "shrine", "~> 3.0"
 
 # cloudinary for image storage 
-gem 'carrierwave'
+# gem 'carrierwave'
 gem 'cloudinary'
-# gem "shrine-cloudinary", "~> 1.1"
+gem "shrine-cloudinary", "~> 1.1"
 
 # devise for authentication
 gem 'devise'
@@ -48,6 +48,7 @@ gem 'bootsnap', '>= 1.4.4', require: false
 group :development, :test do
   # Call 'byebug' anywhere in the code to stop execution and get a debugger console
   gem 'byebug', platforms: [:mri, :mingw, :x64_mingw]
+  gem 'dotenv-rails'
 end
 
 group :development do

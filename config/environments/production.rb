@@ -127,8 +127,8 @@ config.action_mailer.default_url_options = { host: host }
 config.action_mailer.smtp_settings = {
   :address              => "smtp.gmail.com",
   :port                 => 587,
-  :user_name            => Rails.application.credentials[:gmail][:api_email],
-  :password             => Rails.application.credentials[:gmail][:api_password],
+  :user_name            => ENV['gmail_email'],
+  :password             => ENV['gmail_password'],
   :authentication       => "plain",
   :enable_starttls_auto => true
 }

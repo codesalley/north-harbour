@@ -16,6 +16,14 @@
 
 * {
   font-family: 'Poppins', sans-serif;
+  box-sizing: border-box;
+  padding: 0px;
+  margin: 0px;
+}
+
+body {
+  height: 100vh;
+  width: 100vw;
 }
 
 :root {
@@ -87,7 +95,8 @@
   max-width: 300px;
   margin: auto;
   display: flex;
-  max-height: 150px;
+  max-height: 120px;
+  height: 100%;
 }
 
 .product-image-container {
@@ -95,21 +104,39 @@
 }
 
 .product-name {
-  font-size: 0.9rem;
+  font-size: 0.95rem;
   font-weight: 600;
+  margin: 0;
 }
 
 .product-price {
   color: var(--main-color);
   font-size: 0.7rem;
+  margin: 0;
+}
+
+.product-condition {
+  color: var(--main-color);
+  font-size: 0.7rem;
+  margin: 0;
 }
 
 .product-image-container {
   height: 100%;
 }
 
+.product-info {
+  color: var(--main-color);
+  font-size: 0.7rem;
+  margin: 0;
+}
+
 .project-detail {
   display: flex;
   flex-direction: column;
   height: 100%;
+  width: 60%;
+  justify-content: start;
+  padding: 5% 0;
+  gap: 3px;
 }

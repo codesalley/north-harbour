@@ -22,6 +22,7 @@ gem 'redis', '~> 4.0'
 # Use Active Model has_secure_password
 # gem 'bcrypt', '~> 3.1.7'
 
+
 # Use Active Storage variant
 gem 'image_processing', '~> 1.2'
 
@@ -29,11 +30,11 @@ gem 'image_processing', '~> 1.2'
 gem 'gravatar_image_tag'
 
 # shirine for image upload 
-gem "shrine", "~> 3.0"
+# gem "shrine", "~> 3.0"
 
 # cloudinary for image storage 
 gem 'cloudinary'
-gem "shrine-cloudinary", "~> 1.1"
+# gem "shrine-cloudinary", "~> 1.1"
 
 # devise for authentication
 gem 'devise'

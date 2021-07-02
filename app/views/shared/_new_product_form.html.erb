@@ -1,0 +1,49 @@
+<%= form_for product do |f| %>
+
+    <div class="form-group mb-3">
+        <%= f.label :name, "Name" %>
+            <%= f.text_field :name %>
+    </div>
+    <div class="form-group mb-3">
+        <%= f.label :description, "Description" %>
+            <%= f.text_field :description %>
+    </div>
+    <div class="form-group mb-3">
+        <%= f.label :location, "Location" %>
+            <%= f.text_field :location %>
+    </div>
+    <div class="form-group mb-3">
+        <%= f.label :price, "Price GHS" %>
+            <%= f.number_field :price %>
+    </div>
+    <div class="form-group mb-3">
+        <%= f.label :category, "Category" %>
+            <%= f.select(:category, @categories) %>
+    </div>
+    <div class="form-group mb-3">
+        <%= f.label :condition, "Type" %>
+            <%= f.select(:condition, @condition) %>
+    </div>
+    <div class="file-div">
+        <div class="form-group mb-3">
+            <%= f.label :photos, "photos" %>
+                <%= f.file_field :photos %>
+        </div>
+        <div class="form-group mb-3">
+            <%= f.label :photos, "photos" %>
+                <%= f.file_field :photos %>
+        </div>
+        <div class="form-group mb-3">
+            <%= f.label :photos, "photos" %>
+                <%= f.file_field :photos %>
+        </div>
+
+
+
+    </div>
+    <div class="form-group mb-3">
+
+        <%= f.submit "Submit" , disable_with: 'Submiting...' %>
+    </div>
+
+    <% end %>

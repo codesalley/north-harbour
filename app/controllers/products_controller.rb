@@ -27,6 +27,9 @@ class ProductsController < ApplicationController
             redirect_to root_path, notice: 'product summited for review'
         end
     end
+    def show 
+        
+    end
 
     private 
     def product_params 

@@ -148,3 +148,31 @@ body {
 .product-link {
   text-decoration: none;
 }
+
+/* ? product showpage styling  */
+
+.main-show-page {
+  display: flex;
+  flex-direction: column;
+  height: 100vh;
+}
+.carousel,
+.carousel-inner {
+  height: inherit;
+  height: 100%;
+}
+.show-product {
+  max-height: 250px;
+  height: 100%;
+}
+
+.carousel-item {
+  height: inherit;
+  width: inherit;
+}
+
+.carousel-item img {
+  height: 100%;
+  width: 100%;
+  object-fit: contain;
+}

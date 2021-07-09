@@ -5,14 +5,15 @@
                 aria-controls="offcanvasExample">
         <span class="navbar-toggler-icon "></span>
       </button>
-      <a class="navbar-brand text-center" href="#">Harbour</a>
-      <a class="navbar-brand" href="#">
+      <%= link_to 'Harbour', root_path, class: "navbar-brand text-center" %>
+      <a class="navbar-brand profile-option" href="#">
         <%= cl_image_tag(avatar_url_for(current_user), :width=>30, :crop=>"thump", class: "rounded-circle mr-1")  %>
       </a>
       <div class="collapse navbar-collapse" id="navbarTogglerDemo03">
         <ul class="navbar-nav me-auto mb-2 mb-lg-0">
           <li class="nav-item">
-            <a class="nav-link active" aria-current="page" href="#">Home</a>
+            <a class="nav-link active" aria-current="page" href="/">Home</a>
+            <%= link_to 'Home', root_path, html_options = {"aria_current" => "page", class:'nav-link active' } %>
           </li>
           <li class="nav-item">
             <a class="nav-link" href="#">Link</a>

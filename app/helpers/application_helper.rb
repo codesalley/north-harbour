@@ -12,4 +12,9 @@ module ApplicationHelper
 
         end
      end
+
+     def format_time(time) 
+        newTime = time.strftime("%e %^b")
+        return newTime
+     end
 end

@@ -1,9 +1,11 @@
-<div>
+<div class="h-100">
 
-	<div class="products">
+	<div class="products h-100">
 		<% @products.each do |product| %>
-			<%= render 'shared/product_card' , product: product %>
-				<% end %>
+			<%= link_to product_path(product), class: 'product-link' do %>
+				<%= render 'shared/product_card' , product: product %>
+					<% end %>
+						<% end %>
 	</div>
 
 

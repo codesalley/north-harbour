@@ -27,9 +27,35 @@ class ProductsController < ApplicationController
             redirect_to root_path, notice: 'product summited for review'
         end
     end
+    def show 
+        @product = Product.find_by(id: params[:id])
+  
+    end
+    def edit 
+        @categories = CATEGORIES
+        @condition = CONDITION
+        @product = Product.find_by(id: params[:id])
+    end
+    def update 
+        product = Product.find_by(id: params[:id])
+        product.update(update_params)
+        redirect_to root_path
+
+    end
+    def destroy 
+       
+        product = Product.find_by(id: params[:id])
+        product.destroy 
+        redirect_to root_path, alert: 'product deleted'
+
+    end
 
     private 
     def product_params 
         params.require(:product).permit(:name, :location, :price, :description, :photo_one, :photo_two, :photo_three, :photo_four)
+    end
+    def update_params 
+        params.require(:product).permit(:name, :location, :price, :description, :photo_one, :photo_two, :photo_three, :photo_four)
+
     end
 end

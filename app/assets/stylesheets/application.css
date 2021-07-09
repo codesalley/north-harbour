@@ -16,6 +16,14 @@
 
 * {
   font-family: 'Poppins', sans-serif;
+  box-sizing: border-box;
+  padding: 0px;
+  margin: 0px;
+}
+
+body {
+  height: 100vh;
+  width: 100vw;
 }
 
 :root {
@@ -80,14 +88,18 @@
 }
 
 /* product card */
-
+.products {
+  margin-top: 1%;
+}
 .product-card {
-  border: 1px solid gray;
+  border: 1px solid rgba(87, 153, 87, 0.5);
   border-radius: 10px;
   max-width: 300px;
   margin: auto;
   display: flex;
-  max-height: 150px;
+  max-height: 120px;
+  height: 100%;
+  margin-bottom: 5px;
 }
 
 .product-image-container {
@@ -95,21 +107,99 @@
 }
 
 .product-name {
-  font-size: 0.9rem;
+  font-size: 0.95rem;
   font-weight: 600;
+  margin: 0;
+  color: black;
 }
 
 .product-price {
   color: var(--main-color);
   font-size: 0.7rem;
+  margin: 0;
+}
+
+.product-condition {
+  color: var(--main-color);
+  font-size: 0.7rem;
+  margin: 0;
 }
 
 .product-image-container {
   height: 100%;
 }
 
+.product-info {
+  color: var(--main-color);
+  font-size: 0.7rem;
+  margin: 0;
+}
+
 .project-detail {
   display: flex;
   flex-direction: column;
   height: 100%;
+  width: 60%;
+  justify-content: start;
+  padding: 5% 0;
+  gap: 3px;
+}
+
+.product-link {
+  text-decoration: none;
+}
+
+/* ? product showpage styling  */
+
+.main-show-page {
+  display: flex;
+  flex-direction: column;
+  height: 100vh;
+}
+.carousel,
+.carousel-inner {
+  height: inherit;
+  height: 100%;
+}
+.show-product {
+  max-height: 250px;
+  height: 100%;
+}
+
+.carousel-item {
+  height: inherit;
+  width: inherit;
+}
+
+.carousel-item img {
+  height: 100%;
+  width: 100%;
+  object-fit: contain;
+}
+
+.product-nav {
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+}
+
+.btn-call {
+  background-color: var(--main-color);
+  color: white;
+}
+.btn-call:hover {
+  color: var(--main-color);
+  background-color: white;
+  border: 1px solid var(--main-color);
+}
+
+.btn-chat {
+  color: var(--main-color);
+  background-color: white;
+  border: 1px solid var(--main-color);
+}
+.btn-chat:hover {
+  background-color: var(--main-color);
+  color: white;
+  border: 1px solid var(--main-color);
 }

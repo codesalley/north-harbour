@@ -1,58 +1,59 @@
 <div class="main-show-page">
-    <div class="show-product ">
-        <div id="carouselExampleControls" class="carousel slide " data-bs-ride="carousel">
-            <div class="carousel-inner ">
-                <% if @product.photo_one %>
-                    <div class="carousel-item active">
-                        <img src=<%=@product.photo_one_url %> class="d-block " alt="...">
-                    </div>
-                    <% end %>
-                        <% if @product.photo_two %>
-
-                            <div class="carousel-item">
-                                <img src=<%=@product.photo_two_url %> class="d-block " alt="...">
-                            </div>
-                            <% end %>
-                                <% if @product.photo_three %>
-
-                                    <div class="carousel-item">
-                                        <img src=<%=@product.photo_three_url %> class="d-block " alt="...">
-                                    </div>
-                                    <% end %>
-                                        <% if @product.photo_four %>
-                                            <div class="carousel-item">
-                                                <img src=<%=@product.photo_four_url %> class="d-block "
+  <div class="show-product ">
+    <div id="carouselExampleControls" class="carousel slide " data-bs-ride="carousel">
+      <div class="carousel-inner ">
+        <% if @product.photo_one %>
+          <div class="carousel-item active">
+            <img src=<%=@product.photo_one_url %> class="d-block " alt="...">
+          </div>
+        <% end %>
+        <% if @product.photo_two %>
+          <div class="carousel-item">
+            <img src=<%=@product.photo_two_url %> class="d-block " alt="...">
+          </div>
+        <% end %>
+        <% if @product.photo_three %>
+          <div class="carousel-item">
+            <img src=<%=@product.photo_three_url %> class="d-block " alt="...">
+          </div>
+        <% end %>
+        <% if @product.photo_four %>
+          <div class="carousel-item">
+            <img src=<%=@product.photo_four_url %> class="d-block "
                                                 alt="...">
-                                            </div>
-
-                                            <% end %>
-            </div>
-
-            <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleControls"
+          </div>
+        <% end %>
+      </div>
+      <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleControls"
                 data-bs-slide="prev">
-                <span class="carousel-control-prev-icon" aria-hidden="true"></span>
-                <span class="visually-hidden">Previous</span>
-            </button>
-            <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleControls"
+        <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+        <span class="visually-hidden">Previous</span>
+      </button>
+      <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleControls"
                 data-bs-slide="next">
-                <span class="carousel-control-next-icon" aria-hidden="true"></span>
-                <span class="visually-hidden">Next</span>
-            </button>
-        </div>
+        <span class="carousel-control-next-icon" aria-hidden="true"></span>
+        <span class="visually-hidden">Next</span>
+      </button>
     </div>
-    <div class="product-description">
-        <h3>
-            <%= @product.name %>
-        </h3>
-        <p> GHS <%= @product.price %>
-        </p>
-        <p>Description</p>
-        <p>
-            <%= @product.description %>
-        </p>
-    </div>
-    <div class="product-nav ">
-        <button class="btn btn-call rounded-md"> Call </button>
-        <button class="btn btn-chat rounded"> Chat </button>
-    </div>
+  </div>
+  <div class="product-description">
+    <h3>
+      <%= @product.name %>
+    </h3>
+    <p> GHS <%= @product.price %>
+    </p>
+    <p>Description</p>
+    <p>
+      <%= @product.description %>
+    </p>
+  </div>
+  <div class="product-nav ">
+    <% if @product.user_id===current_user.id %>
+      <%= link_to 'Delete' , product_path(@product), method: :delete ,class: 'btn btn-danger rounded-md' %>
+      <%= link_to 'Edit' , edit_product_path(@product), class: 'btn btn-chat rounded' %>
+    <% else %>
+      <button class="btn btn-call rounded-md"> Call </button>
+      <button class="btn btn-chat rounded"> Chat </button>
+    <% end %>
+  </div>
 </div>

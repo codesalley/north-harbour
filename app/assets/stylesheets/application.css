@@ -100,6 +100,7 @@ body {
   max-height: 120px;
   height: 100%;
   margin-bottom: 5px;
+  position: relative;
 }
 
 .product-image-container {
@@ -193,6 +194,9 @@ body {
   border: 1px solid var(--main-color);
 }
 
+
+
+
 .btn-chat {
   color: var(--main-color);
   background-color: white;
@@ -202,4 +206,13 @@ body {
   background-color: var(--main-color);
   color: white;
   border: 1px solid var(--main-color);
+}
+
+.project-time{ 
+  text-decoration: none;
+  color: gray;
+  font-size: .6rem;
+  position: absolute;
+  bottom: 2%;
+  right: 2%;
 }

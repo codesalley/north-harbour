@@ -1,74 +1,72 @@
 <% if current_user %>
-
-    <nav class="navbar navbar-expand-lg navbar-light ">
-        <div class="container-fluid">
-
-            <button class="navbar-toggler" type="button" data-bs-toggle="offcanvas" data-bs-target="#offcanvasExample"
+  <nav class="navbar navbar-expand-lg navbar-dark ">
+    <div class="container-fluid">
+      <button class="navbar-toggler p-1 " type="button" data-bs-toggle="offcanvas" data-bs-target="#offcanvasExample"
                 aria-controls="offcanvasExample">
-
-                <span class="navbar-toggler-icon"></span>
-            </button>
-            <a class="navbar-brand" href="#">Harbour</a>
-
-            <div class="collapse navbar-collapse" id="navbarTogglerDemo03">
-                <ul class="navbar-nav me-auto mb-2 mb-lg-0">
-                    <li class="nav-item">
-                        <a class="nav-link active" aria-current="page" href="#">Home</a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link" href="#">Link</a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link disabled" href="#" tabindex="-1" aria-disabled="true">Disabled</a>
-                    </li>
-                </ul>
-                <div class="d-flex gap-2">
-                    <p>No</p>
-                    <p>profile</p>
-                </div>
-            </div>
+        <span class="navbar-toggler-icon "></span>
+      </button>
+      <%= link_to 'Harbour', root_path, class: "navbar-brand text-center" %>
+      <a class="navbar-brand profile-option" href="#">
+        <%= cl_image_tag(avatar_url_for(current_user), :width=>30, :crop=>"thump", class: "rounded-circle mr-1")  %>
+      </a>
+      <div class="collapse navbar-collapse" id="navbarTogglerDemo03">
+        <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+          <li class="nav-item">
+            <a class="nav-link active" aria-current="page" href="/">Home</a>
+            <%= link_to 'Home', root_path, html_options = {"aria_current" => "page", class:'nav-link active' } %>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="#">Link</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link disabled" href="#" tabindex="-1" aria-disabled="true">Disabled</a>
+          </li>
+        </ul>
+        <div class="d-flex gap-2">
+          <p>No</p>
+          <p>profile</p>
         </div>
-    </nav>
-    <div class="offcanvas w-50 offcanvas-start" tabindex="-1" id="offcanvasExample"
-        aria-labelledby="offcanvasExampleLabel">
-        <div class="offcanvas-header">
-            <h5 class="offcanvas-title" id="offcanvasExampleLabel">
-                <%= current_user.first_name %>
-            </h5>
-            <button type="button" class="btn-close text-reset" data-bs-dismiss="offcanvas" aria-label="Close"></button>
-        </div>
-        <div class="offcanvas-body">
-            <div>
-                <%= link_to 'Post Product' , new_product_path, class: 'btn btn-outline-info' %>
-                    <%= button_to 'Log Out' , destroy_user_session_path, method: :delete, class: 'btn btn-outline-info' %>
-      
-            </div>
-
-        </div>
+      </div>
     </div>
-    <% else %>
-        <nav class="navbar navbar-expand-lg navbar-light ">
-            <div class="container-fluid">
+  </nav>
+  <div class="offcanvas w-75 offcanvas-start side-bar" tabindex="-1" id="offcanvasExample"
+        aria-labelledby="offcanvasExampleLabel">
 
-                <a class="navbar-brand text-center" href="#">Harbour</a>
+    <div class="offcanvas-header">
+      <h5 class="offcanvas-title" id="offcanvasExampleLabel">
+        <%= current_user.first_name %>
+      </h5>
+      <button type="button" class="btn-close text-reset" data-bs-dismiss="offcanvas" aria-label="Close"></button>
+    </div>
+    <div class="offcanvas-body">
+      <div>
+        <%= link_to 'Post Product' , new_product_path, class: 'btn btn-outline-info' %>
+        <%= link_to 'Log Out' , destroy_user_session_path, method: :delete, class: 'btn btn-outline-info' %>
+      </div>
+    </div>
+  </div>
+<% else %>
+  <nav class="navbar navbar-expand-lg navbar-dark ">
+    <div class="container-fluid">
+      <a class="navbar-brand text-center" href="#">Harbour</a>
+      <div class="collapse navbar-collapse" id="navbarTogglerDemo03">
+        <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+          <li class="nav-item">
+            <a class="nav-link active" aria-current="page" href="#">Home</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="#">Link</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link disabled" href="#" tabindex="-1" aria-disabled="true">Disabled</a>
+          </li>
+        </ul>
+        <div class="d-flex gap-2">
+          <p>No</p>
+          <p>profile</p>
 
-                <div class="collapse navbar-collapse" id="navbarTogglerDemo03">
-                    <ul class="navbar-nav me-auto mb-2 mb-lg-0">
-                        <li class="nav-item">
-                            <a class="nav-link active" aria-current="page" href="#">Home</a>
-                        </li>
-                        <li class="nav-item">
-                            <a class="nav-link" href="#">Link</a>
-                        </li>
-                        <li class="nav-item">
-                            <a class="nav-link disabled" href="#" tabindex="-1" aria-disabled="true">Disabled</a>
-                        </li>
-                    </ul>
-                    <div class="d-flex gap-2">
-                        <p>No</p>
-                        <p>profile</p>
-                    </div>
-                </div>
-            </div>
-        </nav>
-        <% end %>
+        </div>
+      </div>
+    </div>
+  </nav>
+<% end %>

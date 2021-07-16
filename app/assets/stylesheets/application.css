@@ -19,6 +19,7 @@
   box-sizing: border-box;
   padding: 0px;
   margin: 0px;
+  color: gray;
 }
 
 body {
@@ -94,7 +95,8 @@ body {
 .product-card {
   border: 1px solid rgba(87, 153, 87, 0.5);
   border-radius: 10px;
-  max-width: 300px;
+  max-width: 400px;
+  width: 100%;
   margin: auto;
   display: flex;
   max-height: 120px;
@@ -195,8 +197,6 @@ body {
 }
 
 
-
-
 .btn-chat {
   color: var(--main-color);
   background-color: white;
@@ -215,4 +215,21 @@ body {
   position: absolute;
   bottom: 2%;
   right: 2%;
+}
+
+/* new product form styling  */ 
+
+.new-form-area {
+  padding: 2% 5%;
+}
+
+.new-input-label {
+  font-size: .8rem;
+  color: gray;
+}
+
+.new-product-input {
+  outline: none;
+  border: 1px solid var(--main-color);
+  width: 100%;
 }

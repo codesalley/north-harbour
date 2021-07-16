@@ -8,8 +8,8 @@ import Turbolinks from "turbolinks";
 import * as ActiveStorage from "@rails/activestorage";
 import "channels";
 import "bootstrap";
-
-import "../../assets/stylesheets/application.css";
+import "../stylesheets/application";
+// import "../../assets/stylesheets/application.css";
 import "bootstrap/dist/js/bootstrap";
 import "bootstrap/dist/css/bootstrap";
 

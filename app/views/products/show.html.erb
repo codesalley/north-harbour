@@ -37,39 +37,41 @@
     </div>
   </div>
   <div class="product-description">
-    <div>
+    <div class='p-name'>
       <h3>
-        <%= @product.name %>
+        <%= @product.name.capitalize %>
       </h3>
-      <p class="p-price"> GHS <%= @product.price %></p>
+      <p class="p-price"> GHS <%= @product.price %>.00</p>
     </div>
-    <section>
-      <div>
+    <section class='f-mobile-section'>
+      <div class='show-cat-main'>
         <i class="fa fa-snowflake-o show-icon" aria-hidden="true"></i>
         <div class='show-cat-div'>
-          <p> <%= @product.condition  %> </p>
+          <p> <%= @product.condition.capitalize  %> </p>
           <small> condition </small>
         </div>
       </div>
-      <div>
+      <div class='show-cat-main'>
         <i class="fa fa-th-large show-icon" aria-hidden="true"></i>
         <div class='show-cat-div'>
-          <p> <%= @product.category  %> </p>
+          <p> <%= @product.category.capitalize  %> </p>
           <small> category </small>
         </div>
       </div>
-      <div>
+      <div class='show-cat-main'>
         <i class="fa fa-home show-icon" aria-hidden="true"></i>
         <div class='show-cat-div'>
-          <p> <%= @product.location  %> </p>
+          <p> <%= @product.location.capitalize  %> </p>
           <small> location </small>
         </div>
       </div>
     </section>
-    <p>Description</p>
-    <p>
-      <%= @product.description %>
-    </p>
+    <section class='d-m-section'>
+      <p class='section-h mb-1'>Description</p>
+      <p class='section-d'>
+        <%= @product.description %>
+      </p>
+    </section>
   </div>
   <div class="product-nav ">
     <% if @product.user_id===current_user.id %>

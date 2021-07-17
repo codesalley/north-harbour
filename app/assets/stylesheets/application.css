@@ -30,7 +30,8 @@ body {
 
 :root {
 	--main-color: #57b642;
-	--main-light: #57b642b4;
+	--main-light: #53be3b88;
+	--text-color: #212529c0;
 }
 
 .main-index {
@@ -184,8 +185,23 @@ body {
 	color: var(--main-light);
 }
 
+.p-name h3 {
+	font-size: 1rem;
+	margin-bottom: 0;
+	color: rgba(0, 0, 0, 0.778);
+	font-weight: 600;
+}
+.p-name p {
+	font-size: 0.6rem;
+}
 .show-icon {
 	color: var(--main-light);
+}
+
+.f-mobile-section {
+	display: flex;
+	flex-wrap: wrap;
+	gap: 20px;
 }
 
 .p-price {
@@ -194,6 +210,43 @@ body {
 }
 .product-description {
 	padding: 0 2%;
+}
+
+.d-m-section {
+	padding-top: 20px;
+}
+
+.section-d {
+	font-size: 0.8rem;
+}
+
+.section-h {
+	font-size: 0.7rem;
+	color: var(--main-light);
+}
+
+.show-cat-main {
+	display: flex;
+	align-items: center;
+	gap: 15px;
+}
+
+.show-cat-main i {
+	font-size: 20px;
+	font-weight: 600;
+}
+
+.show-cat-div p {
+	margin-bottom: 0;
+	color: var(--text-color);
+	font-weight: 500;
+}
+
+.show-cat-div {
+	line-height: 15px;
+}
+.show-cat-div small {
+	font-size: 0.8rem;
 }
 
 .carousel-item img {

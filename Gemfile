@@ -40,7 +40,7 @@ gem "shrine-cloudinary", "~> 1.1"
 # devise for authentication
 gem 'devise'
 
-
+gem "font-awesome-rails"
 
 # Reduces boot times through caching; required in config/boot.rb
 gem 'bootsnap', '>= 1.4.4', require: false

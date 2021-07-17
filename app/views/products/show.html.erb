@@ -37,11 +37,35 @@
     </div>
   </div>
   <div class="product-description">
-    <h3>
-      <%= @product.name %>
-    </h3>
-    <p> GHS <%= @product.price %>
-    </p>
+    <div>
+      <h3>
+        <%= @product.name %>
+      </h3>
+      <p class="p-price"> GHS <%= @product.price %></p>
+    </div>
+    <section>
+      <div>
+        <i class="fa fa-snowflake-o show-icon" aria-hidden="true"></i>
+        <div class='show-cat-div'>
+          <p> <%= @product.condition  %> </p>
+          <small> condition </small>
+        </div>
+      </div>
+      <div>
+        <i class="fa fa-th-large show-icon" aria-hidden="true"></i>
+        <div class='show-cat-div'>
+          <p> <%= @product.category  %> </p>
+          <small> category </small>
+        </div>
+      </div>
+      <div>
+        <i class="fa fa-home show-icon" aria-hidden="true"></i>
+        <div class='show-cat-div'>
+          <p> <%= @product.location  %> </p>
+          <small> location </small>
+        </div>
+      </div>
+    </section>
     <p>Description</p>
     <p>
       <%= @product.description %>

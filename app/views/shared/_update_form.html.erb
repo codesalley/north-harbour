@@ -1,67 +1,70 @@
-<%= form_with(model: product) do |f| %>
-  <div class="form-group mb-3">
-    <%= f.label :name, "Name" %>
-    <%= f.text_field :name %>
-  </div>
-  <div class="form-group mb-3">
-    <%= f.label :description, "Description" %>
-    <%= f.text_field :description %>
-  </div>
-  <div class="form-group mb-3">
-    <%= f.label :location, "Location" %>
-    <%= f.text_field :location %>
-  </div>
-  <div class="form-group mb-3">
-    <%= f.label :price, "Price GHS" %>
-    <%= f.number_field :price %>
-  </div>
-  <div class="form-group mb-3">
-    <%= f.label :category, "Category" %>
-    <%= f.select(:category, @categories) %>
-  </div>
-  <div class="form-group mb-3">
-    <%= f.label :condition, "Type" %>
-    <%= f.select(:condition, @condition) %>
-  </div>
-  <div class="file-div">
-    <% if product.photo_one %>
-      <div>
-        <img src=<%=product.photo_one_url %> class="d-block w-100" alt="...">
+<div class='m-update-form'>
+  <%= form_with(model: product) do |f| %>
+    <div class="form-group mb-3 d-flex flex-column">
+      <%= f.label :name, "Name", class:'p-update-label' %>
+      <%= f.text_field :name, class:'p-update-input' %>
+    </div>
+    <div class="form-group mb-3 d-flex flex-column">
+      <%= f.label :description, "Description", class:'p-update-label' %>
+      <%= f.text_field :description, class:'p-update-input' %>
+    </div>
+    <div class="form-group mb-3 d-flex flex-column">
+      <%= f.label :location, "Location", class:'p-update-label' %>
+      <%= f.text_field :location, class:'p-update-input' %>
+    </div>
+    <div class="form-group mb-3 d-flex flex-column">
+      <%= f.label :price, "Price GHS", class:'p-update-label' %>
+      <%= f.number_field :price, class:'p-update-input' %>
+    </div>
+    <div class="form-group mb-3 d-flex flex-column">
+      <%= f.label :category, "Category" , class:'p-update-label'%>
+      <%= f.select(:category, @categories) %>
+    </div>
+    <div class="form-group mb-3 d-flex flex-column">
+      <%= f.label :condition, "Type", class:'p-update-label' %>
+      <%= f.select(:condition, @condition) %>
+    </div>
+    <div class="file-div">
+      <% if product.photo_one %>
         <div>
-          <button class='btn'> Delete </button>
-          <button> Edit </button>
+          <img src=<%=product.photo_one_url %> class="d-block w-100" alt="...">
+          <div>
+            <button class='btn'> Delete </button>
+            <button class='btn text-secondary py-1 '> Edit </button>
+          </div>
         </div>
-      </div>
-    <% end %>
-    <% if product.photo_two %>
-      <div>
-        <img src=<%=product.photo_two_url %> class="d-block w-100" alt="...">
+      <% end %>
+      <% if product.photo_two %>
         <div>
-          <button class='btn'> Delete </button>
-          <button> Edit </button>
+          <img src=<%=product.photo_two_url %> class="d-block w-100" alt="...">
+          <div>
+            <button class='btn'> Delete </button>
+            <button class='btn text-secondary py-1 '> Edit </button>
+          </div>
         </div>
-      </div>
-    <% end %>
-    <% if product.photo_three %>
-      <div>
-        <img src=<%=product.photo_three_url %> class="d-block w-100" alt="...">
+      <% end %>
+      <% if product.photo_three %>
         <div>
-          <button class='btn'> Delete </button>
-          <button> Edit </button>
+          <img src=<%=product.photo_three_url %> class="d-block w-100" alt="...">
+          <div>
+            <button class='btn'> Delete </button>
+            <button class='btn text-secondary py-1 '> Edit </button>
+          </div>
         </div>
-      </div>
-    <% end %>
-    <% if product.photo_four %>
-      <div>
-        <img src=<%=product.photo_four_url %> class="d-block w-100" alt="...">
+      <% end %>
+      <% if product.photo_four %>
         <div>
-          <button class='btn'> Delete </button>
-          <button> Edit </button>
+          <img src=<%=product.photo_four_url %> class="d-block w-100" alt="...">
+          <div>
+            <button class='btn'> Delete </button>
+            <button class='btn text-secondary py-1 '> Edit </button>
+          </div>
         </div>
-      </div>
-    <% end %>
-  </div>
-  <div class="form-group mb-3">
-    <%= f.submit "Submit" , disable_with: 'Submiting...' %>
-  </div>
-<% end %>
+      <% end %>
+    </div>
+    <div class="form-group mb-3 w-100 d-flex justify-content-around py-2">
+      <%= link_to 'Cancel', products_path, class: 'cancel-btn' %>
+      <%= f.submit "Save" , disable_with: 'Submiting...', class: 'save-btn px-2 py-1 bg-success text-white' %>
+    </div>
+  <% end %>
+</div>

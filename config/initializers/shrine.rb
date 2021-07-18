@@ -1,5 +1,6 @@
 require "cloudinary"
 require "shrine/storage/cloudinary"
+require "shrine/storage/file_system"
 
 Cloudinary.config do |config|
     config.cloud_name = ENV['cloudinary_name']
@@ -10,7 +11,7 @@ Cloudinary.config do |config|
 end 
 
 Shrine.storages = {
-  # cache: Shrine::Storage::Cloudinary.new(prefix: "cache"), # for direct uploads
+  cache: Shrine::Storage::FileSystem.new("public", prefix: "cache"), # for direct uploads
   store: Shrine::Storage::Cloudinary.new(prefix: "harbour"),
   }
 

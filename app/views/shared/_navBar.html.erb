@@ -6,42 +6,38 @@
         <span class="navbar-toggler-icon "></span>
       </button>
       <%= link_to 'Harbour', root_path, class: "navbar-brand text-center" %>
-      <a class="navbar-brand profile-option" href="#">
+      <a class="navbar-brand profile-option d-block d-lg-none" href="#">
         <%= cl_image_tag(avatar_url_for(current_user), :width=>30, :crop=>"thump", class: "rounded-circle mr-1")  %>
       </a>
       <div class="collapse navbar-collapse" id="navbarTogglerDemo03">
         <ul class="navbar-nav me-auto mb-2 mb-lg-0">
           <li class="nav-item">
-            <a class="nav-link active" aria-current="page" href="/">Home</a>
             <%= link_to 'Home', root_path, html_options = {"aria_current" => "page", class:'nav-link active' } %>
           </li>
           <li class="nav-item">
-            <a class="nav-link" href="#">Link</a>
-          </li>
-          <li class="nav-item">
-            <a class="nav-link disabled" href="#" tabindex="-1" aria-disabled="true">Disabled</a>
+            <%= link_to 'Post Product',new_product_path, class: 'nav-link' %>
           </li>
         </ul>
-        <div class="d-flex gap-2">
-          <p>No</p>
-          <p>profile</p>
+        <div class="d-none d-lg-flex gap-2">
+          <%= cl_image_tag(avatar_url_for(current_user), :width=>30, :crop=>"thump", class: "rounded-circle mr-1")  %>
         </div>
       </div>
     </div>
   </nav>
   <div class="offcanvas w-75 offcanvas-start side-bar" tabindex="-1" id="offcanvasExample"
         aria-labelledby="offcanvasExampleLabel">
-
     <div class="offcanvas-header">
       <h5 class="offcanvas-title" id="offcanvasExampleLabel">
-        <%= current_user.first_name %>
+        Welcome  <%= current_user.first_name.capitalize %>
       </h5>
       <button type="button" class="btn-close text-reset" data-bs-dismiss="offcanvas" aria-label="Close"></button>
     </div>
     <div class="offcanvas-body">
-      <div>
-        <%= link_to 'Post Product' , new_product_path, class: 'btn btn-outline-info' %>
-        <%= link_to 'Log Out' , destroy_user_session_path, method: :delete, class: 'btn btn-outline-info' %>
+      <div class='d-flex flex-column gap-3'>
+        <%= link_to 'Post Product' , new_product_path, class: 'n-nav-link' %>
+        <%= link_to 'Contact Admin' , new_product_path, class: 'n-nav-link' %>
+        <%= link_to 'Terms And Conditions' , new_product_path, class: 'n-nav-link' %>
+        <%= link_to 'Log Out' , destroy_user_session_path, method: :delete, class: 'n-nav-link' %>
       </div>
     </div>
   </div>
@@ -64,7 +60,6 @@
         <div class="d-flex gap-2">
           <p>No</p>
           <p>profile</p>
-
         </div>
       </div>
     </div>

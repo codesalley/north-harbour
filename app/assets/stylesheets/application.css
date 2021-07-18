@@ -15,23 +15,22 @@
  *= require font-awesome
  */
 
+:root {
+	--main-color: #57b642;
+	--main-light: #53be3b88;
+	--text-color: #212529c0;
+}
 * {
 	font-family: "Poppins", sans-serif;
 	box-sizing: border-box;
 	padding: 0px;
 	margin: 0px;
-	color: gray;
+	color: var(--text-color);
 }
 
 body {
 	height: 100vh;
 	width: 100vw;
-}
-
-:root {
-	--main-color: #57b642;
-	--main-light: #53be3b88;
-	--text-color: #212529c0;
 }
 
 .main-index {
@@ -318,4 +317,60 @@ body {
 	outline: none;
 	border: 1px solid var(--main-color);
 	width: 100%;
+}
+
+/* update form styling  */
+
+.m-update-form {
+	padding: 0 5%;
+}
+
+.p-update-label {
+	font-size: 0.8rem;
+	color: var(--main-light);
+	font-weight: 600;
+}
+
+.p-update-input {
+	border-radius: 5px;
+	border: 2px solid rgba(128, 128, 128, 0.459);
+	padding: 2px;
+}
+
+.p-update-input:focus {
+	border: 2px solid var(--main-light);
+	outline: none;
+}
+
+.cancel-btn {
+	text-decoration: none;
+	color: rgba(207, 45, 45, 0.774);
+}
+
+.save-btn {
+	text-decoration: none;
+	border-radius: 5px;
+	outline: none;
+	border: none;
+}
+
+.n-nav-link {
+	text-decoration: none;
+	font-size: 0.9rem;
+	padding: 0;
+	color: (var(--text-color));
+}
+
+@media only screen and (min-width: 600px) {
+	.product-card {
+		max-width: 500px;
+		width: 100%;
+		max-height: 150px;
+		height: 100%;
+	}
+	.products {
+		display: flex;
+		flex-direction: column;
+		gap: 10px;
+	}
 }

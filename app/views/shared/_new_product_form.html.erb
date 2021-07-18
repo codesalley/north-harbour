@@ -1,59 +1,50 @@
- <div class="new-form-area"> 
-
-
- <%= form_for product, html: { enctype: "multipart/form-data" } do |f| %>
-
+<div class="new-form-area">
+  <%= form_for product, html: { enctype: "multipart/form-data" } do |f| %>
     <div class="form-group mb-2 d-flex flex-column">
-        <%= f.label :name, "Name", class: 'new-input-label' %>
-            <%= f.text_field :name, class: 'new-product-input rounded input-control' %>
+      <%= f.label :name, "Name", class: 'new-input-label' %>
+      <%= f.text_field :name, class: 'new-product-input rounded input-control' %>
     </div>
     <div class="form-group mb-2 d-flex flex-column">
-        <%= f.label :description, "Description", class: 'new-input-label' %>
-            <%= f.text_area :description , class: 'new-product-input rounded input-control'%>
+      <%= f.label :description, "Description", class: 'new-input-label' %>
+      <%= f.text_area :description , class: 'new-product-input rounded input-control'%>
     </div>
     <div class="form-group mb-2 d-flex flex-column">
-        <%= f.label :location, "Location", class: 'new-input-label' %>
-            <%= f.text_field :location , class: 'new-product-input rounded input-control'%>
+      <%= f.label :location, "Location", class: 'new-input-label' %>
+      <%= f.text_field :location , class: 'new-product-input rounded input-control'%>
     </div>
     <div class="form-group mb-2 d-flex flex-column">
-        <%= f.label :price, "Price GHS", class: 'new-input-label' %>
-            <%= f.number_field :price, class: 'new-product-input rounded input-control' %>
+      <%= f.label :price, "Price GHS", class: 'new-input-label' %>
+      <%= f.number_field :price, class: 'new-product-input rounded input-control' %>
     </div>
     <div class="form-group mb-2 d-flex flex-column">
-        <%= f.label :category, "Category", class: 'new-input-label' %>
-            <%= f.select(:category, @categories, {}, { class: 'new-product-input rounded input-control'}) %>
+      <%= f.label :category, "Category", class: 'new-input-label' %>
+      <%= f.select(:category, @categories, {}, { class: 'new-product-input rounded input-control'}) %>
     </div>
     <div class="form-group mb-2 d-flex flex-column">
-        <%= f.label :condition, "Type", class: 'new-input-label' %>
-            <%= f.select(:condition, @condition,{}, { class: 'new-product-input rounded input-control'}) %>
+      <%= f.label :condition, "Type", class: 'new-input-label' %>
+      <%= f.select(:condition, @condition,{}, { class: 'new-product-input rounded input-control'}) %>
     </div>
     <div class="file-div d-flex flex-column" >
-        <div class="form-group mb-2 d-flex flex-column">
-            <%= f.label :photos, "photos", class: 'new-input-label' %>
-                <%= f.file_field :photo_one, class: 'new-product-input rounded input-control' %>
-        </div>
-        <div class="form-group mb-2 d-flex flex-column">
-            <%= f.label :photo, "photo", class: 'new-input-label' %>
-                <%= f.file_field :photo_two, class: 'new-product-input rounded input-control' %>
-        </div>
-        <div class="form-group mb-2 d-flex flex-column">
-            <%= f.label :photo, "photo", class: 'new-input-label' %>
-                <%= f.file_field :photo_three, class: 'new-product-input rounded input-control' %>
-        </div>
-        <div class="form-group mb-2 d-flex flex-column">
-            <%= f.label :photo, "photo", class: 'new-input-label' %>
-                <%= f.file_field :photo_four, class: 'new-product-input rounded input-control' %>
-        </div>
-
-
-
+      <div class="form-group mb-2 d-flex flex-column">
+        <%= f.label :photos, "photos", class: 'new-input-label' %>
+        <%= f.file_field :photo_one, class: 'new-product-input rounded input-control', require: true %>
+      </div>
+      <div class="form-group mb-2 d-flex flex-column">
+        <%= f.label :photo, "photo", class: 'new-input-label' %>
+        <%= f.file_field :photo_two, class: 'new-product-input rounded input-control' , require: true %>
+      </div>
+      <div class="form-group mb-2 d-flex flex-column">
+        <%= f.label :photo, "photo", class: 'new-input-label' %>
+        <%= f.file_field :photo_three, class: 'new-product-input rounded input-control' %>
+      </div>
+      <div class="form-group mb-2 d-flex flex-column">
+        <%= f.label :photo, "photo", class: 'new-input-label' %>
+        <%= f.file_field :photo_four, class: 'new-product-input rounded input-control' %>
+      </div>
     </div>
     <div class="form-group mb-2 d-flex gap-3">
-
-        <%= f.submit "Cancel" , disable_with: 'Submiting...', class: 'btn btn-danger w-100' %>
-        <%= f.submit "Submit" , disable_with: 'Submiting...', class: 'btn btn-outline-success w-100' %>
+      <%= f.submit "Cancel" , disable_with: 'Submiting...', class: 'btn btn-danger w-100' %>
+      <%= f.submit "Submit" , disable_with: 'Submiting...', class: 'btn btn-outline-success w-100' %>
     </div>
-
-    <% end %>
-
-     </div>
+  <% end %>
+</div>
